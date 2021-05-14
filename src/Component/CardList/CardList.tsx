@@ -1,6 +1,6 @@
 import React from 'react';
 import { pockemonSchema } from '../../Type/PockemonSchema';
-import './CardList.css';
+import { CardListContainer, Hello, Hey, SpritesNormal } from './CardListStyle';
 
 interface CardListProps{
     allpockemon: pockemonSchema[];
@@ -10,20 +10,20 @@ interface CardListProps{
 function CardList({ allpockemon, handleclickedCard } : CardListProps) {
 
     return (
-        <div className="cardList_con">
+        <CardListContainer>
         {
             allpockemon.map((pockemon,id) => {
                 return(
                     <div key={id} onClick={() => handleclickedCard(pockemon.name)}>
-                        <div className="hey">
-                            <img src={pockemon.sprites?.normal} alt="pockemonimg" className="spritesNormal"/>
-                            <div className="hello">Name: {pockemon.name}</div>
-                        </div>
+                        <Hey>
+                            <SpritesNormal src={pockemon.sprites?.normal} alt="pockemonimg" className="spritesNormal"/>
+                            <Hello>Name: {pockemon.name}</Hello>
+                        </Hey>
                     </div>
                 )
             })
         }
-        </div>
+        </CardListContainer>
     )
 }
 

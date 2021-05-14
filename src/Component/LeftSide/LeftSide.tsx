@@ -2,7 +2,7 @@ import React from 'react';
 import { pockemonSchema } from '../../Type/PockemonSchema';
 import CardList from '../CardList/CardList';
 import SearchBox from '../SearchBox/SearchBox';
-import './LeftSide.css';
+import { LeftSideContainer, SearchBoxStyle, CardListStyle } from './LeftSideStyle';
 
 interface LeftSideProps{
     allpockemon: pockemonSchema[];
@@ -12,15 +12,15 @@ interface LeftSideProps{
 
 function LeftSide({ allpockemon, searchValue, handleclickedCard } : LeftSideProps) {
     return (
-        <div className="leftSide_con">
-            <div className="search_box">
+        <LeftSideContainer>
+            <SearchBoxStyle>
                 <SearchBox searchValue={searchValue}/>
-            </div>
-            <div className="card_list">
+            </SearchBoxStyle>
+            <CardListStyle>
                 <CardList allpockemon = {allpockemon}
                     handleclickedCard = { handleclickedCard }/>
-            </div>
-        </div>
+            </CardListStyle>
+        </LeftSideContainer>
     )
 }
 

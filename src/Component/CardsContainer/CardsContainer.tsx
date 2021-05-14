@@ -2,7 +2,7 @@ import React from 'react';
 import { pockemonSchema } from '../../Type/PockemonSchema';
 import LeftSide from '../LeftSide/LeftSide';
 import ResultCard from '../ResultCard/ResultCard';
-import './CardsContainer.css';
+import { CardContainer, RightSide, LeftSideStyle } from './CardContainerStyle';
 
 interface CardsContainerProps{
     allpockemon: pockemonSchema[];
@@ -14,16 +14,16 @@ interface CardsContainerProps{
 function CardsContainer({ allpockemon, selectedPockemon, searchValue, handleclickedCard }: CardsContainerProps) {
     
     return (
-        <div className="card_container">
-            <div className="left_side">
+        <CardContainer>
+            <LeftSideStyle>
                 <LeftSide allpockemon = {allpockemon}
                     searchValue={searchValue}
                     handleclickedCard = { handleclickedCard }/>
-            </div>
-            <div className="right_side">
+            </LeftSideStyle>
+            <RightSide>
                 <ResultCard selectedPockemon = {selectedPockemon}/>
-            </div>
-        </div>
+            </RightSide>
+        </CardContainer>
     )
 }
 

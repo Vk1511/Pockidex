@@ -1,4 +1,6 @@
-.leftSide_con{
+import styled from 'styled-components';
+
+export const LeftSideContainer = styled.div`
     height: 100%;
     width: 100%;
     display: grid;
@@ -7,14 +9,16 @@
     grid-template-areas:
         "search_box"
         "card_list"
-}
-.search_box{
+`;
+
+export const SearchBoxStyle = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.card_list{
+`;
+
+export const CardListStyle = styled.div`
     width: 100%;
     margin-top: .5rem;
-}
+`;

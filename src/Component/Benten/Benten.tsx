@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { pokemonData } from '../../Data/BentenData';
 import { pockemonSchema, pockemonSpritesSchema, unpatchedPockemonSchema } from '../../Type/PockemonSchema';
 import CardsContainer from '../CardsContainer/CardsContainer';
-import './Benten.css';
+import { Container, Heading } from './BentenStyle';
 
 interface bentenProps {
     searchedFied: string;
@@ -83,15 +83,15 @@ function Benten(){
 
     return (
         <div>
-            <h1 className="heading">
-                BenDex
-            </h1>
-            <div className="container">
+            <Heading>
+                PockiDex
+            </Heading>
+            <Container>
                 <CardsContainer allpockemon={bendata.searchedPockemon} 
                     selectedPockemon={bendata.selectedPockemon}
                     searchValue={searchValue}
                     handleclickedCard = {handleclickedCard}/>
-            </div>
+            </Container>
         </div>
     )
 }

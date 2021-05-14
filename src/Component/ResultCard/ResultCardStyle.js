@@ -8,7 +8,7 @@ export const ResultCardContainer = styled.div`
     justify-content: center;
 `;
 
-export const card = styled.div`
+export const Card = styled.div`
     background-color: #f48b29;
     display: flex;
     flex-direction: column;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { pockemonSchema } from '../../Type/PockemonSchema';
-import './ResultCard.css';
+import { Card, ResultCardContainer, ResultImg } from './ResultCardStyle';
 
 interface ResultCardProps{
     selectedPockemon: pockemonSchema | undefined;
@@ -9,24 +9,24 @@ interface ResultCardProps{
 function ResultCard({ selectedPockemon,  }: ResultCardProps) {
 
     return (
-        <div className="result_card_con">
+        <ResultCardContainer>
             {
                 selectedPockemon ? (
-                    <div className="card">
-                        <p><img src={selectedPockemon.sprites?.animated} alt="animatedImg" /></p>
-                        <p><strong>Name: </strong>{selectedPockemon.name}</p>
-                        <p><strong>Height: </strong>{selectedPockemon.height}</p>
-                        <p><strong>Weight: </strong>{selectedPockemon.weight}</p>
-                        <p><strong>Base Experience: </strong>{selectedPockemon.base_experience}</p>
-                    </div>
+                    <Card>
+                        <ResultImg><img src={selectedPockemon.sprites?.animated} alt="animatedImg" /></ResultImg>
+                        <ResultImg><strong>Name: </strong>{selectedPockemon.name}</ResultImg>
+                        <ResultImg><strong>Height: </strong>{selectedPockemon.height}</ResultImg>
+                        <ResultImg><strong>Weight: </strong>{selectedPockemon.weight}</ResultImg>
+                        <ResultImg><strong>Base Experience: </strong>{selectedPockemon.base_experience}</ResultImg>
+                    </Card>
                 ):
                 (
-                    <div className="card">
-                        welcome to BenDex
-                    </div>
+                    <Card>
+                        welcome to BenDe
+                    </Card>
                 )
             }
-        </div>
+        </ResultCardContainer>
     )
 }
 
